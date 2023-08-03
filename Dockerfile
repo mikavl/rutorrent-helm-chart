@@ -30,7 +30,7 @@ RUN apt-get update \
  && chmod 0644 /config/*/*
 
 COPY --chmod=0755 --chown=root:root docker-entrypoint.sh /
-COPY --chmod=0755 --chown=root:root s6 /etc/s6
+COPY --chmod=0755 --chown=root:root s6 /etc/s6/
 
 CMD [ "/usr/bin/s6-svscan", "/run/s6"  ]
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
