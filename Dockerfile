@@ -21,7 +21,7 @@ RUN apt-get update \
       | tar -xz -C /var/www/rutorrent --no-same-owner --no-same-permissions --strip-components 1 \
  && sed -i \
       -e '/$scgi_port =/c\$scgi_port = 0;' \
-      -e '/$scgi_host =/c\$scgi_host = "unix:///run/rtorrent/scgi.sock";' \
+      -e '/$scgi_host =/c\$scgi_host = "unix:///tmp/rtorrent/scgi.sock";' \
       -e '/$profilePath =/c\$profilePath = "/data";' \
       -e '/$profileMask =/c\$profileMask = 0700;' \
       /var/www/rutorrent/conf/config.php \
@@ -32,7 +32,7 @@ RUN apt-get update \
 COPY --chmod=0755 --chown=root:root docker-entrypoint.sh /
 COPY --chmod=0755 --chown=root:root s6 /etc/s6/
 
-CMD [ "/usr/bin/s6-svscan", "/run/s6"  ]
+CMD [ "/usr/bin/s6-svscan", "/tmp/s6"  ]
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 USER rutorrent
-VOLUME [ "/run" ]
+VOLUME [ "/tmp" ]

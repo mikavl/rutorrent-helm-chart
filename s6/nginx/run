@@ -5,11 +5,11 @@ set -e
 umask 0077
 
 mkdir -p \
-  /run/nginx \
-  /run/nginx/body \
-  /run/nginx/fastcgi \
-  /run/nginx/proxy \
-  /run/nginx/scgi \
-  /run/nginx/uwsgi
+  /tmp/nginx \
+  /tmp/nginx/body \
+  /tmp/nginx/fastcgi \
+  /tmp/nginx/proxy \
+  /tmp/nginx/scgi \
+  /tmp/nginx/uwsgi
 
 exec /usr/sbin/nginx -c /config/nginx/nginx.conf

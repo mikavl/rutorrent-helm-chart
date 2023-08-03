@@ -7,7 +7,7 @@ umask 0077
 mkdir -p \
   /data/torrents \
   /data/users \
-  /run/php \
-  /run/php/session
+  /tmp/php \
+  /tmp/php/session
 
 /usr/sbin/php-fpm8.2 --nodaemonize --fpm-config /config/php-fpm/php-fpm.conf
