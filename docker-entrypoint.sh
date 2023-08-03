@@ -2,6 +2,6 @@
 
 set -e
 
-cp --archive /config/s6 /run
+cp --archive /etc/s6 /run
 
 exec "$@"
