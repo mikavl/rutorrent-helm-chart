@@ -15,7 +15,7 @@ RUN apt-get update \
       s6 \
  && rm -rf /var/lib/apt/lists/* \
 # /dev/pts for stdout/stderr is writable by tty group, so add our user to that
- && useradd -d /nonexistent -g 10000 -G tty -M -U -s /usr/sbin/nologin -u 10000 rutorrent \
+ && useradd -d /nonexistent -G tty -M -U -s /usr/sbin/nologin -u 10000 rutorrent \
  && install -d -g root -o root -m 0755 /var/www/rutorrent \
  && curl -sSL "https://github.com/Novik/ruTorrent/archive/refs/tags/v${version}.tar.gz" \
       | tar -xz -C /var/www/rutorrent --no-same-owner --no-same-permissions --strip-components 1 \
