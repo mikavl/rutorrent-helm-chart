@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+umask 0077
+
+mkdir -p \
+  /data/torrents \
+  /data/users \
+  /run/php \
+  /run/php/session
+
+/usr/sbin/php-fpm8.2 --nodaemonize --fpm-config /config/php-fpm/php-fpm.conf
