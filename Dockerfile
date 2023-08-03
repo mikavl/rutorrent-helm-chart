@@ -27,7 +27,9 @@ RUN apt-get update \
       /var/www/rutorrent/conf/config.php \
 # Ensure config permissions are correct, until COPY supports this kind of chmod
  && chmod 0755 /config /config/* \
- && chmod 0644 /config/*/*
+ && chmod 0644 /config/*/* \
+# Avoid making /tmp writable
+ && sed -i -e '/sys_temp_dir =/c\sys_temp_dir = "/run/php/tmp"' /etc/php/8.2/fpm/php.ini
 
 COPY --chmod=0755 --chown=root:root docker-entrypoint.sh /
 COPY --chmod=0755 --chown=root:root s6 /etc/s6/
