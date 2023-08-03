@@ -9,6 +9,7 @@ mkdir -p \
   /data/users \
   /run/php \
   /run/php/lock \
-  /run/php/session
+  /run/php/session \
+  /run/php/tmp
 
 /usr/sbin/php-fpm8.2 --nodaemonize --fpm-config /config/php-fpm/php-fpm.conf
