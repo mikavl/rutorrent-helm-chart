@@ -8,8 +8,6 @@ mkdir -p \
   /data/torrents \
   /data/users \
   /run/php \
-  /run/php/lock \
-  /run/php/session \
-  /run/php/tmp
+  /run/php/session
 
 /usr/sbin/php-fpm8.2 --nodaemonize --fpm-config /config/php-fpm/php-fpm.conf
