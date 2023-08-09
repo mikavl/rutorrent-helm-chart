@@ -1,6 +1,11 @@
 #!/bin/sh
 
+set -e
+
+umask 0077
+
 mkdir -p /tmp/rtorrent
 rm -f /data/session/rtorrent.lock
+chmod 0700 /data
 
 exec /usr/bin/rtorrent -n -o import=/config/rtorrent/rtorrent.rc
