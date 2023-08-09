@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   rutorrent:
   - apiVersion: v2
+    appVersion: v1.0.0
+    created: "2023-08-09T07:20:42.471586299Z"
+    description: A ruTorrent Helm chart for Kubernetes
+    digest: 67c5c3c66802fea5843ddae16bf3e8e9695bb6e3e73caa80be1f1103a9ccfb3f
+    name: rutorrent
+    type: application
+    urls:
+    - https://github.com/mikavl/rutorrent-helm-chart/releases/download/rutorrent-1.0.0/rutorrent-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     appVersion: main
     created: "2023-08-03T07:12:48.290334184Z"
     description: A ruTorrent Helm chart for Kubernetes
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/mikavl/rutorrent-helm-chart/releases/download/rutorrent-0.1.0/rutorrent-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-03T07:12:48.290339884Z"
+generated: "2023-08-09T07:20:42.471595999Z"
